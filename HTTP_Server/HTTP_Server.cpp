@@ -1,4 +1,4 @@
-#include <iostream> 
+п»ї#include <iostream> 
 #include <string> 
 #include <vector> 
 #include <WinSock2.h> 
@@ -9,7 +9,7 @@
 #include <sstream>
 #include <filesystem>
 
-#pragma comment (lib, "Ws2_32.lib") //сообщает линкеру добавить Ws2_32.lib к проекту автоматически
+#pragma comment (lib, "Ws2_32.lib") //СЃРѕРѕР±С‰Р°РµС‚ Р»РёРЅРєРµСЂСѓ РґРѕР±Р°РІРёС‚СЊ Ws2_32.lib Рє РїСЂРѕРµРєС‚Сѓ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё
 
 using std::cout, std::endl, std::cerr;
 
@@ -112,7 +112,7 @@ int main()
 		else
 		{
 			char clientIP[22];
-			inet_ntop(AF_INET, &clientInfo.sin_addr, clientIP, INET_ADDRSTRLEN); //адрес в строку
+			inet_ntop(AF_INET, &clientInfo.sin_addr, clientIP, INET_ADDRSTRLEN); //Р°РґСЂРµСЃ РІ СЃС‚СЂРѕРєСѓ
 			cout << "Client connected with IP address " << clientIP << endl;
 		}
 
@@ -269,7 +269,7 @@ void work_with_client(SOCKET cs, const short BUFF_SIZE)
 
 				begin = request.at(1).find("site");
 
-				std::string path = request.at(1).substr(begin); //считает от begin и до конца строки
+				std::string path = request.at(1).substr(begin); //СЃС‡РёС‚Р°РµС‚ РѕС‚ begin Рё РґРѕ РєРѕРЅС†Р° СЃС‚СЂРѕРєРё
 
 				begin = request.front().find("/doc");
 				end = request.front().find(" ", begin);
@@ -517,24 +517,6 @@ void work_with_client(SOCKET cs, const short BUFF_SIZE)
 		}
 	}
 }
-
-
-//std::string siteData(std::string path)
-//{
-//	std::ifstream file(path);
-//
-//	if (!file.is_open())
-//	{
-//		std::cerr << "Error opening file" << std::endl;
-//		return std::string{ "Not Found" };
-//	}
-//
-//	std::string data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-//
-//	file.close();
-//
-//	return data;
-//}
 
 std::string siteData(std::string path)
 {
